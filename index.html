@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>租租順住資訊科技商務中心｜營業登記借址登記</title>
+    <meta
+      name="description"
+      content="租租順住資訊科技商務中心位於新北市永和頂溪捷運站旁，提供全國公司與新北市行號借址登記、公文信件代收、郵件掃描與文件代寄服務。"
+    />
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <style>
+      :root {
+        --blue: #075cac;
+        --navy: #12385f;
+        --orange: #ff7a1a;
+        --sky: #eaf5ff;
+        --sky-2: #f6fbff;
+        --ink: #102f4d;
+        --muted: #536b7d;
+        --line: #d5e6f4;
+        --white: #ffffff;
+        --soft-orange: #fff0e4;
+        --page: min(100vw, 1120px);
+        --gap: clamp(14px, 2vw, 24px);
+        --pad: clamp(28px, 5vw, 72px);
+        --radius: 28px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #edf4fa;
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC",
+          "Microsoft JhengHei", sans-serif;
+        letter-spacing: 0;
+      }
+
+      .dm {
+        width: var(--page);
+        margin: 0 auto;
+        background: var(--white);
+        overflow: hidden;
+        box-shadow: 0 24px 70px rgba(9, 47, 84, 0.16);
+      }
+
+      .grid-12 {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--gap);
+        align-items: center;
+      }
+
+      .hero {
+        position: relative;
+        padding: clamp(28px, 4vw, 48px) var(--pad) clamp(34px, 4vw, 52px);
+        background:
+          radial-gradient(
+            circle at 9% 0%,
+            #dff1ff 0 clamp(145px, 18vw, 220px),
+            transparent calc(clamp(145px, 18vw, 220px) + 1px)
+          ),
+          radial-gradient(
+            circle at 102% -8%,
+            #ffe6d4 0 clamp(150px, 20vw, 240px),
+            transparent calc(clamp(150px, 20vw, 240px) + 1px)
+          ),
+          linear-gradient(180deg, var(--sky) 0%, #f9fcff 100%);
+      }
+
+      .brand {
+        display: grid;
+        grid-template-columns: clamp(78px, 9vw, 112px) 1fr;
+        align-items: center;
+        gap: clamp(16px, 2.4vw, 26px);
+        grid-column: 1 / -1;
+      }
+
+      .brand img {
+        width: clamp(78px, 9vw, 112px);
+        height: clamp(78px, 9vw, 112px);
+        object-fit: contain;
+        background: white;
+      }
+
+      .brand-copy {
+        min-width: 0;
+      }
+
+      .brand-name {
+        font-size: clamp(28px, 4.1vw, 40px);
+        font-weight: 750;
+        line-height: 1.18;
+        color: var(--navy);
+      }
+
+      .brand-meta {
+        margin-top: 10px;
+        font-size: clamp(20px, 2.7vw, 28px);
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--gap);
+        align-items: center;
+        margin-top: clamp(30px, 4vw, 48px);
+      }
+
+      .hero-title {
+        grid-column: span 7;
+      }
+
+      .eyebrow {
+        font-size: clamp(34px, 5vw, 54px);
+        line-height: 1.18;
+        color: var(--blue);
+        font-weight: 760;
+      }
+
+      h1 {
+        margin: 12px 0 0;
+        font-size: clamp(48px, 6.5vw, 76px);
+        line-height: 1.04;
+        font-weight: 850;
+        color: var(--navy);
+      }
+
+      .subtitle {
+        margin-top: 24px;
+        font-size: clamp(26px, 3.2vw, 36px);
+        line-height: 1.36;
+        font-weight: 650;
+        color: var(--muted);
+      }
+
+      .hero-points {
+        display: grid;
+        grid-column: span 5;
+        gap: clamp(18px, 2.6vw, 26px);
+        align-self: center;
+      }
+
+      .point {
+        display: grid;
+        grid-template-columns: 18px 1fr;
+        gap: 18px;
+        align-items: center;
+        font-size: clamp(28px, 3.5vw, 38px);
+        line-height: 1.35;
+        font-weight: 720;
+        color: var(--navy);
+      }
+
+      .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 999px;
+        background: var(--orange);
+      }
+
+      .catalog {
+        padding: clamp(42px, 5vw, 62px) clamp(22px, 4vw, 52px)
+          clamp(56px, 6vw, 76px);
+        background: var(--white);
+      }
+
+      .section-title {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--gap);
+        align-items: center;
+        margin: 0 clamp(10px, 2vw, 22px) clamp(28px, 4vw, 38px);
+        font-size: clamp(32px, 4vw, 44px);
+        line-height: 1;
+        font-weight: 800;
+        color: var(--navy);
+      }
+
+      .section-title::after {
+        content: "";
+        height: 3px;
+        border-radius: 999px;
+        background: var(--line);
+      }
+
+      .tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap);
+      }
+
+      .tile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 320px;
+        aspect-ratio: 1 / 1;
+        margin: 0;
+        background: var(--sky-2);
+        overflow: hidden;
+        border-radius: var(--radius);
+        box-shadow: inset 0 0 0 1px var(--line);
+      }
+
+      .tile img {
+        width: 100%;
+        height: auto;
+        flex: 1 1 0;
+        min-height: 0;
+        object-fit: contain;
+        display: block;
+        padding: 8px;
+        background: var(--sky-2);
+      }
+
+      .caption {
+        position: relative;
+        order: -1;
+        flex: 0 0 clamp(76px, 8.5vw, 100px);
+        height: clamp(76px, 8.5vw, 100px);
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.94);
+        color: var(--navy);
+        font-size: clamp(27px, 3.7vw, 39px);
+        font-weight: 820;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .tile-number {
+        display: none;
+      }
+
+      .caption::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: var(--blue);
+      }
+
+      .tile:nth-child(2n) .caption::before {
+        background: var(--orange);
+      }
+
+      /* Older WebViews get a stable tile height; newer browsers use the ratio. */
+      @supports (aspect-ratio: 1 / 1) {
+        .tile {
+          height: auto;
+        }
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--gap);
+        align-items: center;
+        padding: clamp(42px, 5vw, 60px) var(--pad);
+        background:
+          radial-gradient(
+            circle at 98% 12%,
+            rgba(255, 122, 26, 0.16) 0 170px,
+            transparent 171px
+          ),
+          var(--navy);
+        color: white;
+      }
+
+      .contact-label,
+      .contact-small {
+        color: #bfe1ff;
+        font-weight: 700;
+      }
+
+      .contact-label {
+        font-size: clamp(30px, 3.6vw, 42px);
+        margin-bottom: 18px;
+      }
+
+      .phone {
+        font-size: clamp(58px, 7vw, 80px);
+        line-height: 1;
+        font-weight: 760;
+        color: white;
+      }
+
+      .email {
+        font-size: clamp(31px, 4.1vw, 44px);
+        line-height: 1.25;
+        letter-spacing: 0.05em;
+        color: #ffe0c8;
+        font-weight: 720;
+        white-space: nowrap;
+      }
+
+      .address {
+        margin-top: 26px;
+        font-size: clamp(31px, 4vw, 43px);
+        line-height: 1.28;
+        font-weight: 730;
+        color: white;
+      }
+
+      .address-floor {
+        display: block;
+        margin-top: 8px;
+        color: #bfe1ff;
+        font-size: 0.84em;
+        font-weight: 650;
+      }
+
+      .contact-small {
+        margin-top: 20px;
+        font-size: clamp(25px, 3.1vw, 34px);
+        line-height: 1.35;
+      }
+
+      .contact-phone {
+        grid-column: span 4;
+        min-width: 0;
+      }
+
+      .contact-info {
+        grid-column: span 5;
+        min-width: 0;
+      }
+
+      .contact-logo {
+        display: grid;
+        place-items: center;
+        grid-column: span 3;
+        min-width: 0;
+      }
+
+      .contact-logo img {
+        width: clamp(154px, 18vw, 204px);
+        height: clamp(154px, 18vw, 204px);
+        object-fit: contain;
+        background: white;
+      }
+
+      .copyright {
+        grid-column: 1 / -1;
+        margin-top: clamp(8px, 1.5vw, 18px);
+        padding-top: clamp(20px, 2.5vw, 30px);
+        border-top: 1px solid rgba(191, 225, 255, 0.35);
+        color: rgba(255, 255, 255, 0.72);
+        font-size: clamp(16px, 1.8vw, 22px);
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      @media (min-width: 761px) {
+        .hero {
+          padding-top: 24px;
+          padding-bottom: 28px;
+        }
+
+        .hero-grid {
+          margin-top: 26px;
+        }
+
+        .brand-name {
+          font-size: clamp(26px, 3.4vw, 34px);
+        }
+
+        .brand-meta {
+          font-size: clamp(18px, 2.3vw, 24px);
+        }
+
+        .eyebrow {
+          font-size: clamp(30px, 4.1vw, 44px);
+        }
+
+        h1 {
+          font-size: clamp(44px, 5.8vw, 68px);
+        }
+
+        .subtitle {
+          font-size: clamp(24px, 2.9vw, 32px);
+        }
+
+        .point {
+          font-size: clamp(24px, 3vw, 32px);
+        }
+
+        .tile {
+          height: 400px;
+          aspect-ratio: 4 / 5;
+          background: transparent;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .tile img {
+          padding: 0;
+          background: transparent;
+          object-fit: cover;
+        }
+
+        @supports (aspect-ratio: 1 / 1) {
+          .tile {
+            height: auto;
+          }
+        }
+
+        .catalog {
+          padding-left: clamp(26px, 3vw, 36px);
+          padding-right: clamp(26px, 3vw, 36px);
+        }
+
+        .tiles {
+          gap: clamp(14px, 1.5vw, 18px);
+        }
+
+        .caption {
+          flex-basis: clamp(62px, 6vw, 76px);
+          height: clamp(62px, 6vw, 76px);
+          font-size: clamp(22px, 2.6vw, 28px);
+        }
+
+        .contact {
+          gap: clamp(16px, 1.5vw, 20px);
+        }
+
+        .contact-label {
+          margin-bottom: 12px;
+          font-size: clamp(22px, 2.2vw, 28px);
+        }
+
+        .phone {
+          font-size: clamp(36px, 3.9vw, 48px);
+        }
+
+        .email {
+          font-size: clamp(20px, 2.2vw, 27px);
+          letter-spacing: 0.025em;
+          overflow-wrap: anywhere;
+          white-space: normal;
+        }
+
+        .address {
+          margin-top: 18px;
+          font-size: clamp(21px, 2.3vw, 27px);
+        }
+
+        .contact-small {
+          margin-top: 14px;
+          font-size: clamp(17px, 1.8vw, 22px);
+        }
+
+        .contact-logo {
+          align-self: stretch;
+        }
+
+        .contact-logo img {
+          width: 100%;
+          height: 100%;
+          max-width: 200px;
+          max-height: 200px;
+        }
+
+        .copyright {
+          font-size: clamp(15px, 1.6vw, 20px);
+        }
+      }
+
+      @media (max-width: 760px) {
+        body {
+          background: var(--white);
+        }
+
+        .dm {
+          width: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+
+        .hero {
+          padding: 28px 22px 32px;
+        }
+
+        .brand {
+          grid-template-columns: 76px 1fr;
+          gap: 16px;
+        }
+
+        .brand img {
+          width: 76px;
+          height: 76px;
+        }
+
+        .brand-name {
+          font-size: 24px;
+        }
+
+        .brand-meta {
+          font-size: 16px;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          width: 100%;
+        }
+
+        .hero-title,
+        .hero-points {
+          grid-column: 1 / -1;
+          width: 100%;
+        }
+
+        .catalog {
+          padding: 36px 0 44px;
+        }
+
+        .section-title {
+          margin: 0 22px 26px;
+        }
+
+        .tiles {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .tile {
+          height: auto;
+          aspect-ratio: auto;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .tile img {
+          flex: 0 0 auto;
+          height: auto;
+          padding: 0;
+        }
+
+        .caption {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.45em;
+          position: relative;
+          flex: 0 0 auto;
+          min-height: 72px;
+          height: auto;
+          padding: 18px 22px;
+          font-size: clamp(22px, 6vw, 30px);
+        }
+
+        .tile-number {
+          display: inline-block;
+          color: rgba(255, 169, 95, 0.52);
+          font-size: 1em;
+          font-weight: 850;
+          line-height: 1;
+        }
+
+        .tile-title {
+          display: inline-block;
+        }
+
+        .contact {
+          grid-template-columns: 1fr;
+          gap: 22px;
+          padding: 40px 28px;
+        }
+
+        .email {
+          white-space: normal;
+        }
+
+        .contact-phone,
+        .contact-info,
+        .contact-logo {
+          grid-column: 1;
+        }
+
+        .contact-logo {
+          justify-items: stretch;
+          align-items: start;
+        }
+
+        .contact-logo img {
+          width: 100%;
+          height: auto;
+          max-width: none;
+          max-height: none;
+        }
+
+        .copyright {
+          grid-column: 1 / -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="dm">
+      <section class="hero">
+        <div class="brand">
+          <img src="8.png" alt="租租順住資訊科技商務中心 logo" />
+          <div class="brand-copy">
+            <div class="brand-name">租租順住資訊科技商務中心</div>
+            <div class="brand-meta">
+              2026.6 新開幕｜由租租順住資訊科技有限公司營運
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-title">
+            <div class="eyebrow">永和頂溪站旁</div>
+            <h1>合法商務中心</h1>
+            <div class="subtitle">營業登記｜借址登記｜公文信件代收</div>
+          </div>
+          <div class="hero-points">
+            <div class="point">
+              <span class="dot"></span><span>公司與新北市行號登記</span>
+            </div>
+            <div class="point">
+              <span class="dot"></span><span>現場查核｜租約APP管理</span>
+            </div>
+            <div class="point">
+              <span class="dot"></span><span>公文信件代收掃描｜轉寄</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog">
+        <div class="section-title">登記支援項目</div>
+        <div class="tiles">
+          <figure class="tile">
+            <img src="1.png" alt="現場座位查核" />
+            <figcaption class="caption">
+              <span class="tile-number">1之9</span
+              ><span class="tile-title">現場座位查核</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="2.jpg" alt="櫃檯招牌查核" />
+            <figcaption class="caption">
+              <span class="tile-number">2之9</span
+              ><span class="tile-title">櫃檯招牌查核</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="3.png" alt="12年轉租公證" />
+            <figcaption class="caption">
+              <span class="tile-number">3之9</span
+              ><span class="tile-title">12年轉租公證</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="4.png" alt="一站進台北市" />
+            <figcaption class="caption">
+              <span class="tile-number">4之9</span
+              ><span class="tile-title">一站進台北市</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="5.png" alt="頂溪站旁3分鐘" />
+            <figcaption class="caption">
+              <span class="tile-number">5之9</span
+              ><span class="tile-title">頂溪站旁3分鐘</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="6.png" alt="郵件掃描代寄" />
+            <figcaption class="caption">
+              <span class="tile-number">6之9</span
+              ><span class="tile-title">郵件代收轉寄</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="7.png" alt="合法設立管區" />
+            <figcaption class="caption">
+              <span class="tile-number">7之9</span
+              ><span class="tile-title">合法設立管區</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="9.png" alt="租約 APP 提醒" />
+            <figcaption class="caption">
+              <span class="tile-number">8之9</span
+              ><span class="tile-title">租約APP提醒</span>
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="6.png" alt="文件掃描代寄" />
+            <figcaption class="caption">
+              <span class="tile-number">9之9</span
+              ><span class="tile-title">郵件掃描服務</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="contact">
+        <div class="contact-phone">
+          <div class="contact-label">聯絡方式｜專員 June</div>
+          <div class="phone">0912601268</div>
+        </div>
+        <div class="contact-info">
+          <div class="email">service@zustaytechbiz.com</div>
+          <div class="address">
+            新北市永和區永和路二段206號<span class="address-floor"
+              >實際使用樓層 2 樓</span
+            >
+          </div>
+          <div class="contact-small">統編：60648837</div>
+        </div>
+        <div class="contact-logo">
+          <img src="8.png" alt="租租順住資訊科技商務中心 logo" />
+        </div>
+        <div class="copyright">
+          © <span id="copyright-year">2026</span> 租租順住資訊科技有限公司. All
+          rights reserved. Since 2025.
+        </div>
+      </section>
+    </main>
+    <script>
+      document.getElementById("copyright-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
