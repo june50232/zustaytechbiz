@@ -43,7 +43,6 @@
       }
 
       .dm {
-        width: var(--page);
         margin: 0 auto;
         background: var(--white);
         overflow: hidden;
@@ -82,9 +81,24 @@
         grid-column: 1 / -1;
       }
 
-      .brand img {
+      .brand picture,
+      .contact-logo picture {
+        display: block;
+      }
+
+      .brand picture {
         width: clamp(78px, 9vw, 112px);
         height: clamp(78px, 9vw, 112px);
+      }
+
+      .contact-logo picture {
+        width: clamp(154px, 18vw, 204px);
+        height: clamp(154px, 18vw, 204px);
+      }
+
+      .brand img {
+        width: 100%;
+        height: 100%;
         object-fit: contain;
         background: white;
       }
@@ -211,15 +225,21 @@
         box-shadow: inset 0 0 0 1px var(--line);
       }
 
-      .tile img {
+      .tile picture {
         width: 100%;
-        height: auto;
         flex: 1 1 0;
         min-height: 0;
-        object-fit: contain;
         display: block;
+        object-fit: contain;
         padding: 8px;
         background: var(--sky-2);
+      }
+
+      .tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
       }
 
       .caption {
@@ -294,6 +314,8 @@
         line-height: 1;
         font-weight: 760;
         color: white;
+        overflow-wrap: break-word; /* 現代瀏覽器標準寫法 */
+        word-wrap: break-word; /* 為了相容較舊瀏覽器的寫法 */
       }
 
       .email {
@@ -303,6 +325,8 @@
         color: #ffe0c8;
         font-weight: 720;
         white-space: nowrap;
+        overflow-wrap: break-word; /* 現代瀏覽器標準寫法 */
+        word-wrap: break-word; /* 為了相容較舊瀏覽器的寫法 */
       }
 
       .address {
@@ -345,8 +369,8 @@
       }
 
       .contact-logo img {
-        width: clamp(154px, 18vw, 204px);
-        height: clamp(154px, 18vw, 204px);
+        width: 100%;
+        height: 100%;
         object-fit: contain;
         background: white;
       }
@@ -405,9 +429,12 @@
           box-shadow: none;
         }
 
-        .tile img {
+        .tile picture {
           padding: 0;
           background: transparent;
+        }
+
+        .tile img {
           object-fit: cover;
         }
 
@@ -466,11 +493,16 @@
           align-self: stretch;
         }
 
-        .contact-logo img {
+        .contact-logo picture {
           width: 100%;
           height: 100%;
           max-width: 200px;
           max-height: 200px;
+        }
+
+        .contact-logo img {
+          width: 100%;
+          height: 100%;
         }
 
         .copyright {
@@ -499,6 +531,11 @@
         }
 
         .brand img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .brand picture {
           width: 76px;
           height: 76px;
         }
@@ -543,10 +580,13 @@
           box-shadow: none;
         }
 
-        .tile img {
+        .tile picture {
           flex: 0 0 auto;
-          height: auto;
           padding: 0;
+        }
+
+        .tile img {
+          height: auto;
         }
 
         .caption {
@@ -595,6 +635,13 @@
           align-items: start;
         }
 
+        .contact-logo picture {
+          width: 100%;
+          height: auto;
+          max-width: none;
+          max-height: none;
+        }
+
         .contact-logo img {
           width: 100%;
           height: auto;
@@ -612,7 +659,17 @@
     <main class="dm">
       <section class="hero">
         <div class="brand">
-          <img src="8.png" alt="租租順住資訊科技商務中心 logo" />
+          <picture>
+            <source srcset="8.webp" type="image/webp" />
+            <img
+              src="8.png"
+              alt="租租順住資訊科技商務中心 logo"
+              width="1254"
+              height="1254"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
           <div class="brand-copy">
             <div class="brand-name">租租順住資訊科技商務中心</div>
             <div class="brand-meta">
@@ -645,63 +702,153 @@
         <div class="section-title">登記支援項目</div>
         <div class="tiles">
           <figure class="tile">
-            <img src="1.png" alt="現場座位查核" />
+            <picture>
+              <source srcset="1.webp" type="image/webp" />
+              <img
+                src="1.png"
+                alt="現場座位查核"
+                width="2000"
+                height="2000"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">1之9</span
               ><span class="tile-title">現場座位查核</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="2.jpg" alt="櫃檯招牌查核" />
+            <picture>
+              <source srcset="2.webp" type="image/webp" />
+              <img
+                src="2.jpg"
+                alt="櫃檯招牌查核"
+                width="1812"
+                height="1824"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">2之9</span
               ><span class="tile-title">櫃檯招牌查核</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="3.png" alt="12年轉租公證" />
+            <picture>
+              <source srcset="3.webp" type="image/webp" />
+              <img
+                src="3.png"
+                alt="12年轉租公證"
+                width="950"
+                height="876"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">3之9</span
               ><span class="tile-title">12年轉租公證</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="4.png" alt="一站進台北市" />
+            <picture>
+              <source srcset="4.webp" type="image/webp" />
+              <img
+                src="4.png"
+                alt="一站進台北市"
+                width="1800"
+                height="1890"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">4之9</span
               ><span class="tile-title">一站進台北市</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="5.png" alt="頂溪站旁3分鐘" />
+            <picture>
+              <source srcset="5.webp" type="image/webp" />
+              <img
+                src="5.png"
+                alt="頂溪站旁3分鐘"
+                width="1806"
+                height="1680"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">5之9</span
               ><span class="tile-title">頂溪站旁3分鐘</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="6.png" alt="郵件掃描代寄" />
+            <picture>
+              <source srcset="6.webp" type="image/webp" />
+              <img
+                src="6.png"
+                alt="郵件掃描代寄"
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">6之9</span
               ><span class="tile-title">郵件代收轉寄</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="7.png" alt="合法設立管區" />
+            <picture>
+              <source srcset="7.webp" type="image/webp" />
+              <img
+                src="7.png"
+                alt="合法設立管區"
+                width="1388"
+                height="948"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">7之9</span
               ><span class="tile-title">合法設立管區</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="9.png" alt="租約 APP 提醒" />
+            <picture>
+              <source srcset="9.webp" type="image/webp" />
+              <img
+                src="9.png"
+                alt="租約 APP 提醒"
+                width="2000"
+                height="2000"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">8之9</span
               ><span class="tile-title">租約APP提醒</span>
             </figcaption>
           </figure>
           <figure class="tile">
-            <img src="6.png" alt="文件掃描代寄" />
+            <picture>
+              <source srcset="6.webp" type="image/webp" />
+              <img
+                src="6.png"
+                alt="文件掃描代寄"
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption class="caption">
               <span class="tile-number">9之9</span
               ><span class="tile-title">郵件掃描服務</span>
@@ -725,7 +872,17 @@
           <div class="contact-small">統編：60648837</div>
         </div>
         <div class="contact-logo">
-          <img src="8.png" alt="租租順住資訊科技商務中心 logo" />
+          <picture>
+            <source srcset="8.webp" type="image/webp" />
+            <img
+              src="8.png"
+              alt="租租順住資訊科技商務中心 logo"
+              width="1254"
+              height="1254"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div class="copyright">
           © <span id="copyright-year">2026</span> 租租順住資訊科技有限公司. All
